@@ -26,7 +26,26 @@ public class DisplayCase {
         int dimension = input.nextInt();
         input.nextLine();
 
-        DisplayTray tray = new DisplayTray(identifier, inlayMaterialColor, dimension);
-        displayTrays.addLast(tray);
+        DisplayTray displayTray = new DisplayTray(identifier, inlayMaterialColor, dimension);
+        displayTrays.addLast(displayTray);
+    }
+
+    public void display() {
+        // Display case details
+        System.out.println("Display Case Details:");
+        System.out.println("Identifier: " + identifier);
+        System.out.println("Type: " + type);
+        System.out.println("Lighting: " + (lighting ? "Yes" : "No"));
+        System.out.println("\nDisplay Trays in this Case:");
+
+        // Check if there are display trays and display their details
+        if (displayTrays.size == 0) {
+            System.out.println("No display trays in this case.");
+        } else {
+            for (DisplayTray tray : displayTrays) {
+                tray.display();
+                System.out.println("============================");
+            }
+        }
     }
 }

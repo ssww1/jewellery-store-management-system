@@ -36,4 +36,23 @@ public class DisplayTray {
         ItemOfJewellery jewellery = new ItemOfJewellery(description, type, targetGender, retailPrice, image);
         jewelleries.addLast(jewellery);
     }
+
+    public void display() {
+        // Display tray details
+        System.out.println("Display Tray Details:");
+        System.out.println("Identifier: " + identifier);
+        System.out.println("Inlay Material Color: " + inlayMaterialColor);
+        System.out.println("Dimension: " + dimension);
+        System.out.println("\nJewellery Items in this Tray:");
+
+        // Display all the jewellery items in this tray
+        if (jewelleries.size == 0) {
+            System.out.println("No jewellery items in this tray.");
+        } else {
+            for (ItemOfJewellery jewellery : jewelleries) {
+                jewellery.display();
+                System.out.println("============================");
+            }
+        }
+    }
 }

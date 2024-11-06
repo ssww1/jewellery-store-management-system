@@ -37,5 +37,28 @@ public class ItemOfJewellery {
         matCompList.addLast(matCom);
     }
 
+    public void display() {
+        // Display basic item details
+        System.out.println("Jewellery Item Details:");
+        System.out.println("Description: " + description);
+        System.out.println("Type: " + type);
+        System.out.println("Target Gender: " + targetGender);
+        System.out.println("Retail Price: " + retailPrice);
+        System.out.println("Image URL: " + image);
+
+        // Display the materials or components of the jewellery item
+        System.out.println("\nMaterials/Components:");
+        if (matCompList.size == 0) {
+            System.out.println("No materials added yet.");
+        } else {
+            for (MaterialOrComponents mat : matCompList) {
+                System.out.println("Type: " + mat.type);
+                System.out.println("Description: " + mat.description);
+                System.out.println("Weight: " + mat.weight);
+                System.out.println("Quality: " + mat.quality);
+                System.out.println("---------------------------");
+            }
+        }
+    }
 
 }

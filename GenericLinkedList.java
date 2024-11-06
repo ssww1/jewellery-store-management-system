@@ -4,31 +4,43 @@ public class GenericLinkedList<E> implements Iterable<E> {
 
     // Node class definition
     private class Node<E> {
-        E data;
+        public E data;
         Node<E> next;
 
         public Node(E data) {
             this.data = data;
         }
+
+        public E getData() {
+            return data;
+        }
+
+        public Node<E> getNext() {
+            return next;
+        }
     }
 
     // Fields and methods for GenericLinkedList
-    Node head;
+    public Node<E> head;
     int size = 0;
 
+    public E getHeadData(){
+        return head.data;
+    }
+
     public void addFirst(E element) {
-        Node newNode = new Node(element);
+        Node<E> newNode = new Node<E>(element);
         newNode.next = head;
         head = newNode;
         size++;
     }
 
     public void addLast(E element) {
-        Node newNode = new Node(element);
+        Node<E> newNode = new Node<E>(element);
         if (head == null) {
             head = newNode;
         } else {
-            Node temp = head;
+            Node<E> temp = head;
             while (temp.next != null) {
                 temp = temp.next;
             }
@@ -38,7 +50,7 @@ public class GenericLinkedList<E> implements Iterable<E> {
     }
 
     public boolean contains(E element) {
-        Node temp = head;
+        Node<E> temp = head;
         while (temp != null) {
             if (temp.data.equals(element)) {
                 return true;
@@ -57,7 +69,7 @@ public class GenericLinkedList<E> implements Iterable<E> {
         if (n == 1) {
             head = head.next;
         } else {
-            Node temp = head;
+            Node<E> temp = head;
             for (int i = 1; i < n - 1; i++) {
                 temp = temp.next;
             }
@@ -69,7 +81,7 @@ public class GenericLinkedList<E> implements Iterable<E> {
 
 
     public void display() {
-        Node temp = head;
+        Node<E> temp = head;
         StringBuilder details = new StringBuilder();
         while (temp != null) {
             details.append(temp.data);
@@ -104,3 +116,4 @@ public class GenericLinkedList<E> implements Iterable<E> {
         }
     }
 }
+
