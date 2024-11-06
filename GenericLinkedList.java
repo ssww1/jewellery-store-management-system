@@ -24,8 +24,19 @@ public class GenericLinkedList<E> implements Iterable<E> {
     public Node<E> head;
     int size = 0;
 
-    public E getHeadData(){
-        return head.data;
+    public E getNthData(int n){
+        if (n <= 0 || n > size) {
+            throw new IllegalArgumentException("Invalid position: " + n);
+        }else {
+            if (n == 1){
+                return head.data;
+            }
+            Node<E> temp = head;
+            for (int i = 0; i < n-1; i++){
+                temp = temp.next;
+            }
+            return temp.data;
+        }
     }
 
     public void addFirst(E element) {

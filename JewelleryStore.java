@@ -90,39 +90,42 @@ public class JewelleryStore {
 
             // 添加展示柜
             store.addDisplayCase();
+            store.addDisplayCase();
 
             // 查看添加的展示柜
             store.display();
 
             // 添加展示托盘
             if (store.displayCases.size > 0) {
-                DisplayCase displayCase = store.displayCases.getHeadData();
-                displayCase.addDisplayTray();
+                DisplayCase displayCase1 = store.displayCases.getNthData(1);
+                DisplayCase displayCase2 = store.displayCases.getNthData(2);
+                displayCase1.addDisplayTray();
+                displayCase2.addDisplayTray();
             }
 
             // 查看展示柜中的托盘
             store.display();
-
-            // 添加珠宝项链
-            if (store.displayCases.size > 0 && store.displayCases.getHeadData().displayTrays.size > 0) {
-                DisplayCase displayCase = store.displayCases.getHeadData();
-                DisplayTray displayTray = displayCase.displayTrays.getHeadData();
-                displayTray.addItemOfJewellery();
-            }
-
-            // 查看珠宝项链
-            store.display();
-
-            // 添加材料到珠宝项链
-            if (store.displayCases.size > 0 && store.displayCases.getHeadData().displayTrays.size > 0) {
-                DisplayCase displayCase = store.displayCases.getHeadData();
-                DisplayTray displayTray = displayCase.displayTrays.getHeadData();
-                ItemOfJewellery jewellery = displayTray.jewelleries.getHeadData();
-                jewellery.addMaterial();
-            }
-
-            // 查看珠宝项链的材料
-            store.display();
+//
+//            // 添加珠宝项链
+//            if (store.displayCases.size > 0 && store.displayCases.getHeadData().displayTrays.size > 0) {
+//                DisplayCase displayCase = store.displayCases.getHeadData();
+//                DisplayTray displayTray = displayCase.displayTrays.getHeadData();
+//                displayTray.addItemOfJewellery();
+//            }
+//
+//            // 查看珠宝项链
+//            store.display();
+//
+//            // 添加材料到珠宝项链
+//            if (store.displayCases.size > 0 && store.displayCases.getHeadData().displayTrays.size > 0) {
+//                DisplayCase displayCase = store.displayCases.getHeadData();
+//                DisplayTray displayTray = displayCase.displayTrays.getHeadData();
+//                ItemOfJewellery jewellery = displayTray.jewelleries.getHeadData();
+//                jewellery.addMaterial();
+//            }
+//
+//            // 查看珠宝项链的材料
+//            store.display();
         }
     }
 
